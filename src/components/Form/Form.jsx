@@ -2,10 +2,11 @@ import uniqid from 'uniqid';
 import { TheForm, Label, Input, SubmitBtn } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/sliceContacts';
+import { getContacts } from 'redux/selectors';
 
 const Form = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(getContacts);
 
   const handleSubmit = evt => {
     evt.preventDefault();
